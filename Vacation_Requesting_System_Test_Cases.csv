@@ -1,0 +1,152 @@
+Test Case ID,Name / Title,Preconditions,Steps to be executed,Test Data,Expected Results,Status,Requirement Traceability,Bugs Traceability,Issue Type
+TC-001,Verify login with valid credentials,User account exists,"1. Open the application.
+2. Enter valid username and password.
+3. Click 'Login'.","Username: valid_user
+Password: valid_password",User is directed to the dashboard.,Pending,FR-001: Authentication,,Functional
+TC-002,Verify login with invalid credentials,User account exists,"1. Open the application.
+2. Enter invalid username and/or password.
+3. Click 'Login'.","Username: invalid_user
+Password: invalid_password OR valid",Error message 'Invalid username or password' is displayed.,Pending,FR-001: Authentication,,Functional
+TC-003,Verify login with leaving fields empty,User account exists,"1. Open the application.
+2. Leave username and/or password.
+3. Click 'Login'.","Username: empty field
+Password: empty field",Error message 'please enter user name or password' is displayed.,Pending,FR-001: Authentication,,Functional
+TC-004,Employee requests vacation days,Employee logged in,"1. Navigate to ""Create Absence"".
+2. Select leave type.
+3. Specify start and end dates.
+4. Submit request.","Leave Type: `Annual Leave`
+Start Date: `2024-09-01`
+End Date: `2024-09-05`","Vacation request successfully submitted, confirmation message 
+displayed.",Pending,FR-002: Request Creation,,Functional
+TC-005,Verify system handles different leave types,Employee logged in,"1. Navigate to ""Create Absence"".
+2. Select different leave types.
+3. Submit requests for each leave type.","Leave Type: Sick Leave
+Leave Type: Parental Leave
+Leave Type: Annual Leave",System correctly processes and distinguishes between different leave types.,Pending,FR-002: Request Creation,,Functional
+TC-006,Verify leave balance update after different leave types,Employee logged in,"1. Request different types of leave.
+2. Check updated leave balance for each type.","Leave Type: Sick Leave
+Leave Type: Parental Leave
+Leave Type: Annual Leave",Leave balances are updated accurately after requests.,Pending,FR-002: Request Creation,,Functional
+TC-007,Overlapping vacation requests (negative scenario),Employee logged in,"1. Navigate to 'Create Absence'.
+2. Select leave type.
+3. Specify dates overlapping an existing request.
+4. Submit request.","Leave Type: Annual Leave
+Start Date: 2024-09-02
+End Date: 2024-09-04",Error message 'Overlapping leave dates' is displayed.,Pending,FR-002: Request Creation,,Functional
+TC-008,Invalid date range (end date before start date),Employee logged in,"1. Navigate to ""Create Absence"".
+2. Select leave type.
+3. Enter end date that precedes start date.
+4. Submit request.","Leave Type: `Annual Leave`
+Start Date: `2024-09-05`
+End Date: `2024-09-01`","Error message ""Invalid date range"" is displayed.",Pending,FR-002: Request Creation,,Functional
+TC-009,Validate vacation request does not exceed balance,"Employee logged in, available balance: 22 days","1. Navigate to ""Create Absence"".
+2. Select leave type.
+3. Specify start and end dates.
+4. Submit request.","Leave Type: Annual Leave
+Start Date: 2024-09-01
+End Date: 2024-09-21","Vacation request successfully submitted, confirmation message displayed.",Pending,FR-002: Request Creation,,Functional
+TC-010,Validate vacation request exactly matches balance,"Employee logged in, available balance: 22 days","1. Navigate to ""Create Absence""
+2. Select leave type.
+3. Specify start and end dates
+4. Submit request.","Leave Type: Annual Leave
+Start Date: 2024-09-01
+End Date: 2024-09-22","Vacation request successfully submitted, confirmation message displayed.",Pending,FR-002: Request Creation,,Functional
+TC-011,Validate vacation request exceeds balance,"Employee logged in, available balance: 22 days","1. Navigate to ""Create Absence""
+2. Select leave type.
+3. Specify start and end dates
+4. Submit request.","Leave Type: Annual Leave
+Start Date: 2024-09-01
+End Date: 2024-09-23","Error message ""Insufficient leave balance"" is displayed.",Pending,FR-002: Request Creation,,Functional
+TC-012,Verify holidays (Friday and Saturday) are not selectable,"Employee logged in, system configured with holidays","1. Navigate to ""Create Absence""
+2. Open date picker
+3. Check if Friday and Saturday are disabled or not clickable.",None,Friday and Saturday are not clickable or selectable.,Pending,FR-002: Request Creation,,Functional
+TC-013,Verify request start date on a holiday is not allowed,"Employee logged in, system configured with holidays","1. Navigate to ""Create Absence""
+2. Select a start date that is a holiday (e.g., Friday)
+3. Check if the date is not allowed.","Leave Type: Annual Leave
+Start Date: 2024-08-09 (Friday)","Error message ""Cannot start leave on a holiday"" is displayed.",Pending,FR-002: Request Creation,,Functional
+TC-014,Verify request end date on a holiday is not allowed,"Employee logged in, system configured with holidays","1. Navigate to ""Create Absence"".
+2. Select an end date that is a holiday (e.g., Saturday).
+3. Check if the date is not allowed.","Leave Type: Annual Leave
+End Date: 2024-08-10 (Saturday)","Error message ""Cannot end leave on a holiday"" is displayed.",Pending,FR-002: Request Creation,,Functional
+TC-015,"Verify optional field ""Requesting"" can be left empty",Employee logged in,"1. Navigate to ""Create Absence""
+2. Enter only mandatory fields
+3. Leave ""Requesting"" field empty
+4. Submit request.","Leave Type: Annual Leave
+Start Date: 2024-09-01
+End Date: 2024-09-05","Vacation request is successfully submitted, ""Requesting"" field is empty.",Pending,FR-002: Request Creation,,Functional
+TC-016,"Verify optional field ""Returning to work on"" can be left empty",Employee logged in,"1. Navigate to ""Create Absence"".
+2. Enter only mandatory fields.
+3. Leave ""Returning to work on"" field empty.
+4. Submit request.","Leave Type: Annual Leave
+Start Date: 2024-09-01
+End Date: 2024-09-05","Vacation request is successfully submitted, ""Returning to work on"" field is empty.",Pending,FR-002: Request Creation,,Functional
+TC-017,"Verify optional field ""Comment"" can be left empty",Employee logged in,"1. Navigate to ""Create Absence"".
+2. Enter only mandatory fields.
+3. Leave ""Comment"" field empty
+4. Submit request.","Leave Type: Annual Leave
+Start Date: 2024-09-01
+End Date: 2024-09-05","Vacation request is successfully submitted, ""Comment"" field is empty.",Pending,FR-002: Request Creation,,Functional
+TC-018,"Verify ""Requesting"" field with data",Employee logged in,"1. Navigate to ""Create Absence""
+2. Enter mandatory fields.
+3. Fill in the ""Requesting"" field.
+4. Submit request.","Leave Type: Annual Leave
+Start Date: 2024-09-01
+End Date: 2024-09-05
+Requesting: John Doe","Vacation request is successfully submitted with ""Requesting"" field populated.",Pending,FR-002: Request Creation,,Functional
+TC-019,"Verify ""Returning to work on"" field with data",Employee logged in,"1. Navigate to ""Create Absence"".
+2. Enter mandatory fields.
+3. Fill in the ""Returning to work on"" field.
+4. Submit request.","Leave Type: Annual Leave
+Start Date: 2024-09-01
+End Date: 2024-09-05
+Returning to work on: 2024-09-06","Vacation request is successfully submitted with ""Returning to work on"" field populated.",Pending,FR-002: Request Creation,,Functional
+TC-020,"Verify ""Comment"" field with data",Employee logged in,"1. Navigate to ""Create Absence""
+2. Enter mandatory fields.
+3. Fill in the ""Comment"" field.
+4. Submit request.","Leave Type: Annual Leave
+Start Date: 2024-09-01
+End Date: 2024-09-05
+Comment: Family vacation","Vacation request is successfully submitted with ""Comment"" field populated.",Pending,FR-002: Request Creation,,Functional
+TC-021,"Verify ""Team Absences"" section displays employees on the specified date",Employee logged in,"1. Navigate to ""Create Absence"".
+2. Select a start and end date.
+3. Submit the request.
+4. View ""Team Absences"" section.","Leave Type: Annual Leave
+Start Date: 2024-09-01
+End Date: 2024-09-05","""Team Absences"" section shows employees with absences on these dates.",Pending,FR-002: Request Creation,,Functional
+TC-022,"Verify ""Team Absences"" section correctly displays multiple employees' absences","Employee logged in, multiple team members with absences","1. Navigate to ""Create Absence""
+2. Select a date where multiple team members are absent.
+3. View the ""Team Absences"" section.","Leave Type: Annual Leave
+Start Date: 2024-09-01
+End Date: 2024-09-01","""Team Absences"" section lists all team members who are absent on that date.",Pending,FR-002: Request Creation,,Functional
+TC-023,"Verify ""Team Absences"" section shows no employees when none are absent","Employee logged in, no team members with absences on selected date","1. Navigate to ""Create Absence""
+2. Select a date when no team members are absent
+3. View the ""Team Absences"" section.","Leave Type: Annual Leave
+Start Date: 2024-09-01
+End Date: 2024-09-01","""Team Absences"" section shows a message indicating no team member absent.",Pending,FR-002: Request Creation,,Functional
+TC-024,"Verify ""Team Absences"" section updates after new absences are recorded","Employee logged in, new absences recorded for team members","1. Record new absences for team members
+2. Navigate to ""Create Absence"".
+3. Select a date that now includes new absences.
+4. View the ""Team Absences"" section.","Leave Type: Annual Leave
+Start Date: 2024-09-01
+End Date: 2024-09-01","""Team Absences"" section reflects the newly recorded absences.",Pending,FR-002: Request Creation,,Functional
+TC-025,Verify usability of leave request form,System operational,"1. Navigate through the leave request form
+2. Check for clear instructions and ease of use.",Leave request form,Form is user-friendly with clear instructions and labels.,Pending,NFR-002: Request Creation,,"Usability , Non-Functional"
+TC-026,Verify error handling messages are user-friendly,System operational,"1. Trigger various errors (e.g., invalid dates, insufficient balance)
+2. Check that error messages are clear and helpful.",Various error scenarios,"Error messages are clear, helpful, and user-friendly.",Pending,NFR-002: Request Creation,,"Usability , Non-Functional"
+TC-027,Verify system consistency after multiple leave requests,System operational,"1. Submit multiple leave requests from different users.
+2. Ensure system consistency and data integrity.",Multiple leave requests,System remains consistent and data integrity is maintained.,Pending,NFR-002: Request Creation,,"Reliability , Non-Functional"
+TC-028,Verify error message for invalid leave request date,Employee logged in,"1. Navigate to ""Create Absence"".
+2. Enter invalid dates (end date before start date)
+3. Submit request.","Leave Type: Annual Leave
+Start Date: 2024-09-05
+End Date: 2024-09-01","Error message ""Invalid date range"" is displayed",Pending,FR-002: Request Creation,,Functional
+TC-029,Manager approves a vacation request,Manager logged in,"1. Navigate to 'Pending Requests'.
+2. Select a request.
+3. Click 'Approve'.",Click 'Approve',"Request status updated to 'Approved', employee notified.",Pending,FR-003: Approval Workflow,,Functional
+TC-030,Manager rejects a vacation request,Manager logged in,"1. Navigate to 'Pending Requests'.
+2. Select a request.
+3. Click 'Reject'.",Click 'Approve',"Request status updated to 'Rejected', employee notified.",Pending,FR-003: Approval Workflow,,Functional
+TC-031,Verify system response time under load,"System idle, no load","1. Simulate concurrent requests from multiple users.
+2. Monitor response times.",Simulated concurrent users: 100,System maintains response time within acceptable limits.,Pending,NFR-001: Performance,,"Performance, 
+Non-Functional"
+,,,,,,,,,
