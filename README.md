@@ -10,7 +10,8 @@ Overview
 In this folder, you’ll find the automation scripts for testing the https://reqres.in/api/users API. This API provides endpoints for managing users, also aims to ensure its functionality and reliability.
 
 ### Key Features:
-### API Endpoints Tested: Includes various endpoints for creating, reading, updating, and deleting users.
+### API Endpoints Tested:
+Includes various endpoints for creating, reading, updating, and deleting users.
 Test Scenarios: Covers successful requests and edge cases to validate the robustness of the API.
 Automation Framework: Uses industry-standard tools and frameworks to ensure accurate and efficient testing.
 To get started, navigate to the Automation folder. 
