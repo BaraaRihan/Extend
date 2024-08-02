@@ -8,7 +8,7 @@ Overview
 Automation Folder: API Testing using Rest Assured - junit - cucumber - maven - test scenarios - pojo classes - parametrization ,etc..
 In this folder, you’ll find the automation scripts for testing the https://reqres.in/api/users API. This API provides endpoints for managing users, also aims to ensure its functionality and reliability.
 
-##Key Features:
+## Key Features:
 API Endpoints Tested: Includes various endpoints for creating, reading, updating, and deleting users.
 Test Scenarios: Covers successful requests and edge cases to validate the robustness of the API.
 Automation Framework: Uses industry-standard tools and frameworks to ensure accurate and efficient testing.
@@ -19,7 +19,7 @@ To get started, navigate to the Automation folder.
 Test Cases: Vacation Requesting System
 This section contains comprehensive test cases for the Vacation Requesting System - Create Absence. The test cases cover various functionalities including user roles, different leave types, approval workflows, and error handling.
 
-##Key Features:
+## Key Features:
 Functional Test Cases:
 
 User Roles: Tests for employee, manager, and admin roles.
