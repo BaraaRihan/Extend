@@ -31,5 +31,6 @@ Non-Functional Test Cases:
 
 Performance: Tests system response under normal or peak loads.
 Usability: Verifies ease of use and accessibility of the system.
+Security: Ensures data protection and secure access controls.
 Reliability: Assesses system recovery and data integrity.
 To explore the test cases, refer to the TestCases folder. Each test case includes detailed steps, expected results, and information on preconditions.
