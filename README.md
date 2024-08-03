@@ -7,7 +7,7 @@ Welcome to the Testing Repository! This repository contains valuable resources f
 Overview
 
 ## Automation Folder:
-API Testing using Rest Assured - junit - cucumber - maven - test scenarios - pojo classes - parametrization , request and response loggining , reports etc..
+API Testing using Rest Assured - junit - cucumber - maven - test scenarios - pojo classes - parametrization - request and response loggining - reports - etc..
 In this folder, you’ll find the automation scripts for testing the https://reqres.in/api/users API. This API provides endpoints for managing users, also aims to ensure its functionality and reliability.
 
 ### Key Features:
